@@ -1,0 +1,7 @@
+set(source_files_lib NucleiAnalysisSelectionTagProbe.C)
+set(header_files_lib_with_classdef NucleiAnalysisSelectionTagProbe.hh)
+add_project_library(NucleiAnalysisSelectionTagProbeLibrary SOURCES ${source_files_lib} HEADERS_WITH_CLASSDEF ${header_files_lib_with_classdef} LINKDEF Linkdef.h LIBS  NucleiAnalysisTree LithiumBinning SelectionCuts LithiumAnalysisTools)
+
+set(source_files_exe main.C)
+add_project_executable(NucleiAnalysisSelectionTagProbe SOURCES ${source_files_exe} LIBS NucleiAnalysisSelectionTagProbeLibrary NucleiAnalysisTree LithiumBinning  SelectionCuts LithiumAnalysisTools) 
+target_link_libraries(NucleiAnalysisSelectionTagProbeLibrary LithiumAnalysisTools)
